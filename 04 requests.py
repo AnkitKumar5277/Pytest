@@ -9,6 +9,7 @@ def test_get_request_positive():
     url_get = "https://restful-booker.herokuapp.com/booking/1"
     response_data = requests.get(url=url_get)
     assert response_data.status_code == 200
+    print("positive")
 
 @allure.title("Verify the GET Request of Restful Booker with invalid ID")
 @allure.description("This Testcase check Booking -1 and verify the response")
@@ -17,6 +18,7 @@ def test_get_request_negative():
     url_get = "https://restful-booker.herokuapp.com/booking/-1"
     response_data = requests.get(url=url_get)
     assert response_data.status_code == 404
+    print("negative")
 
 # Yeh code RESTful API ke GET request ko PyTest aur Allure ke saath test karta hai. 
 # Dono test cases API ke response ko status code ke basis par verify karte hain.
