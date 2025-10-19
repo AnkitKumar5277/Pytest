@@ -1,3 +1,6 @@
+# pytest main.py --alluredir=reports
+# allure serve reports
+
 import pytest
 import allure
 
