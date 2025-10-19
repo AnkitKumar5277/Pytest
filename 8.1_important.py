@@ -8,7 +8,7 @@ headers = { "Content-Type" : "application/json" }
 @allure.title("TC01 - Create Token")
 @allure.description("Verify that a token is created with valid username and password.")
 @pytest.mark.smoke
-def get_token():
+def get_token(): #func 1
     path_post = "/auth"
     full_url = base_url + path_post
     json_payload = {
@@ -25,7 +25,7 @@ def get_token():
     assert len(token) > 0
     return token
 
-def get_bookingid():
+def get_bookingid(): #func 2
     path_post = "/booking"
     full_url = base_url + path_post
     payload = {
@@ -47,7 +47,7 @@ def get_bookingid():
     bookingid = response_data_json["bookingid"]
     return bookingid
 
-def test_put_reuest():
+def test_put_reuest(): #func 3
     token = get_token()
     bookingid = get_bookingid()
 
@@ -85,7 +85,7 @@ def test_put_reuest():
     print(response.json()["lastname"])
 
 
-def test_delete():
+def test_delete(): #func 4
     base_url = "https://restful-booker.herokuapp.com/booking/"
     booking_id = get_bookingid()
     DELETE_URL = base_url + str(booking_id)
