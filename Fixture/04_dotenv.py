@@ -17,12 +17,11 @@ def create_token():
         "password": password
     }
     response = requests.post(url=url, headers=headers, json=json_payload)
+
     response.raise_for_status()  # raises error if status != 200
     token = response.json().get("token")
     assert response.json()[username]=="admin"
     return token
-
-
 
 @pytest.fixture()
 def create_booking_id():
@@ -46,24 +45,20 @@ def create_booking_id():
     booking_id = data["bookingid"]
     return booking_id
 
-
 @pytest.fixture()
 def read_csv_file_data():
     # implement logic to read CSV later
     return []
-
 
 @pytest.fixture()
 def read_mysql_file_database():
     # implement logic to connect to MySQL later
     return None
 
-
 @pytest.fixture()
 def read_url_testdata_excel():
     # implement logic to read Excel test data later
     return None
-
 
 @pytest.fixture()
 def launch_browser():
