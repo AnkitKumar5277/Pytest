@@ -55,6 +55,9 @@ def test_update_req_1(create_token, create_booking_id):
 import allure  # pip install allure
 import pytest  # pip instal pytest
 import requests  # pip install requests
+
+# pytest main.py --alluredir=reports
+# allure serve reports
 import pytest
 
 @pytest.fixture()
@@ -80,4 +83,3 @@ def test_update_req_3(create_token, create_booking_id, read_csv_file_data):
     print("Token ->", create_token)
     print("Booking ID -> ", create_booking_id)
     print("Excel File ->", read_csv_file_data)
-
