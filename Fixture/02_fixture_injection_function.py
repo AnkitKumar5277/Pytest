@@ -51,3 +51,33 @@ def test_update_req_1(create_token, create_booking_id):
 # 🔹 test_update_req_1() ek test function hai jo in dono fixtures ka use karta hai.
 # 🔹 Test ke dauraan print() ke through token aur booking ID screen par show ki jati hai.
 # Fixtures se reusable test data milta hai, aur code clean rehta hai.
+
+import allure  # pip install allure
+import pytest  # pip instal pytest
+import requests  # pip install requests
+import pytest
+
+@pytest.fixture()
+def create_token():
+    return "abc"
+
+@pytest.fixture()
+def create_booking_id():
+    return 123
+
+@pytest.fixture()
+def read_csv_file_data():
+    return "xyz"
+
+def test_update_req_1(create_token):
+    print("Booking ID -> ", create_booking_id)
+
+def test_update_req_2(create_token, create_booking_id):
+    print("Token ->", create_token)
+    print("Booking ID -> ", create_booking_id)
+
+def test_update_req_3(create_token, create_booking_id, read_csv_file_data):
+    print("Token ->", create_token)
+    print("Booking ID -> ", create_booking_id)
+    print("Excel File ->", read_csv_file_data)
+
